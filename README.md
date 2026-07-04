@@ -1,6 +1,6 @@
 # The Other Rivalry — UC campuses, ranked on sustainability
 
-**Live site:** https://sonalishyma.github.io/Impact-of-Featured-Spotify-Artists/
+**Live site:** https://sonalishyma.github.io/UC-Sustainability-Rivalry/ 
 
 UC campuses compete over everything: U.S. News rank, rivalry games, Nobel counts,
 admit rates. Nobody ranks them on sustainability — so Team 3 did. Nine of the ten
