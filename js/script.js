@@ -103,7 +103,7 @@
     let rows = "";
     ORDER.forEach((k) => {
       const r = RANKS[k];
-      rows += `<tr><td class="camp" data-camp="${k}">${CAMPUSES[k].name} <span style="color:var(--faint)">(${r.total})</span></td>`;
+      rows += `<tr><td class="camp" data-camp="${k}">${badgeHTML(k, "sm")}${CAMPUSES[k].name} <span style="color:var(--faint)">(${r.total})</span></td>`;
       METRICS.forEach((m) => {
         rows += `<td tabindex="0" style="background:${rankColor(r[m.key])}" data-camp="${k}" data-m="${m.key}">${r[m.key]}</td>`;
       });
@@ -155,7 +155,7 @@
   function buildProfileChips() {
     const wrap = document.getElementById("chips");
     wrap.innerHTML = ORDER.map((k) =>
-      `<button class="chip${k === "UCSD" ? " homechip" : ""}" aria-pressed="false" data-id="${k}">${k}</button>`
+      `<button class="chip${k === "UCSD" ? " homechip" : ""}" aria-pressed="false" data-id="${k}">${badgeHTML(k, "sm")}${k}</button>`
     ).join("");
     wrap.querySelectorAll(".chip").forEach((b) => b.addEventListener("click", () => selectCampus(b.dataset.id, false)));
   }
@@ -166,7 +166,7 @@
   }
   function renderProfile(id) {
     const r = RANKS[id];
-    document.getElementById("profileName").textContent = CAMPUSES[id].name;
+    document.getElementById("profileName").innerHTML = badgeHTML(id, "lg") + CAMPUSES[id].name;
     document.getElementById("profileSub").textContent = `${r.total} points · #${ORDER.indexOf(id) + 1} overall of 9`;
 
     const rows = METRICS.map((m) => {
